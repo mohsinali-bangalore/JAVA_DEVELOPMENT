@@ -16,6 +16,7 @@ public class Main implements ActionListener {
 	private static JButton button;
 	private static JLabel success;
 	private static JButton button2;
+	private static JButton button3;
 
 	public static void main(String[] args) {
 		
@@ -52,6 +53,11 @@ public class Main implements ActionListener {
 		button2.setBounds(175, 80, 80, 25);
 		button2.addActionListener(new Main());
 		panel.add(button2);
+
+		button3 = new JButton("Exit");
+		button3.setBounds(130, 120, 80, 25);
+		button3.addActionListener(new Main());
+		panel.add(button3);
 		
 		success = new JLabel("");
 		success.setBounds(10, 110, 300, 25);
@@ -75,6 +81,8 @@ public class Main implements ActionListener {
 			userField.setText(null);
 			passwordField.setText(null);
 			success.setText(null);
+		} else if(e.getSource() == button3) {
+			System.exit(0);
 		}
 	}
 
